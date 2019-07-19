@@ -1,0 +1,5 @@
+val txt_find=sc.textFile("file:/home/nilesh/HADOOP/hadoop_home/hadoop-2.8.5/logs/hadoop-nilesh-datanode-ubuntu.log")
+val df=txt_find.toDf("line")
+val exception=df.filter(col("line").like("%IOException%"))
+exception.count()
+df.filter(col("line").like("%ConnectException%"))
